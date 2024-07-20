@@ -1,0 +1,6 @@
+
+
+def example_of_function
+
+
+class Name
