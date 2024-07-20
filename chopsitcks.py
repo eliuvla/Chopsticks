@@ -5,6 +5,6 @@ from player import *
 
 HelloWorld()
 
-juego = Game()
+game = Game()
 
-juego.Print()
+game.Print()
