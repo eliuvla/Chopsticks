@@ -6,3 +6,5 @@ from player import *
 HelloWorld()
 
 juego = Game()
+
+juego.Print()
