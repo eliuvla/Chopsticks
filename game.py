@@ -4,8 +4,8 @@ from player import *
 class Game:
 
   def __init__(self, player_1, player_2):
-    self.player_1 = player_1
-    self.player_2 = player_2
+    self.player_1 = player()
+    self.player_2 = player()
     self.turn = np.random.randint(1,3)
     self.winner = None
 

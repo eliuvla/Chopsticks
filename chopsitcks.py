@@ -3,7 +3,7 @@
 from game import * 
 from player import *
 
-HelloWorld()
+
 
 game = Game()
 
