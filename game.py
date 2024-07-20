@@ -1,15 +1,18 @@
-from player import * 
+import numpy as np
+from player import *
 
-class Game:
-    def __init__(self):
-        self.player_1 = Player()
-        self.player_2 = Player()
-        self.turn = 1 
+class Position:
 
-    def Print(self):
-        print("turn of the player "+ str(self.turn))
-        print("hands of the player 1:\n"+str(self.player_1.hand_1)+" "+str(self.player_1.hand_2)+"\n")
-        print("hands of the player 2:\n"+str(self.player_2.hand_1)+" "+str(self.player_2.hand_2)+"\n")
+  def __init__(self, player_1, player_2):
+    self.player_1 = player_1
+    self.player_2 = player_2
+    self.turn = np.random.randint(0,2)
+    self.winner = None
 
-    def Actions(self):
-        pass
+  def check_win(self):
+    if self.player_1.hand_1 + self.player_1.hand_2 == 0:
+      self.winner = 0
+      print('Player 2 wins!')
+    elif self.player_2.hand_1 + self.player_2.hand_2 == 0:
+      self.winner = 1
+      print('Player 1 wins!')
