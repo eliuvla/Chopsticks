@@ -16,3 +16,9 @@ class Game:
     elif self.player_2.hand_1 + self.player_2.hand_2 == 0:
       self.winner = 2
       print('Player 2 wins!')
+
+  def print(self):
+      print("turn of player"+str(self.turn))
+      print("hands of player 1: "+str(self.player_1.hand_1)+" "+str(self.player_1.hand_2))
+      print("hands of player 2: "+str(self.player_2.hand_1)+" "+str(self.player_2.hand_2))
+

@@ -9,3 +9,4 @@ player_2 = Player(1,1)
 
 game = Game(player_1,player_2)
 
+game.print()
