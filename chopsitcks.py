@@ -20,7 +20,7 @@ while True:
         game.action(player_2,player_1)
         game.check_win()
         if game.winner != None:
-            game.print(1)
+            game.print()
             break
     game.turn_switch()
 
