@@ -18,16 +18,14 @@ class Game:
       print('Player 2 wins!')
 
   def print(self):
-      print("turn of player "+str(self.turn))
-      print("hands of player 1: "+str(self.player_1.hand_1)+" "+str(self.player_1.hand_2))
-      print("hands of player 2: "+str(self.player_2.hand_1)+" "+str(self.player_2.hand_2))
+      print("Hands of player 1: "+str(self.player_1.hand_1)+" "+str(self.player_1.hand_2))
+      print("Hands of player 2: "+str(self.player_2.hand_1)+" "+str(self.player_2.hand_2))
+      print("Turn of player "+str(self.turn))
 
-  def turn(self):
-      self.turn = (self.turn + 1)%2 + 1
-      print(f'Player {self.turn} turn')
+  def turn_switch(self):
+        self.turn = 1 if self.turn == 2 else 2
 
   def action(self,player_1,player_2):   
-      print("It's {player_1} turn")
       if player_1.hand_1 != 0 and player_1.hand_2 != 0:
         print('You can only attack')
         while True:
@@ -37,7 +35,7 @@ class Game:
             break
         while True:
           print("Choose one of your opponent's hand (1 or 2)")         
-          hand_o = int(input)
+          hand_o = int(input())
           if hand_o == 1 or hand_o == 2:
             break
         player_1.attack(hand, player_2, hand_o)
@@ -55,7 +53,7 @@ class Game:
               break
           while True:
             print("Choose one of your opponent's hand (1 or 2)")         
-            hand_o = int(input)
+            hand_o = int(input())
             if hand_o == 1 or hand_o == 2:
               break
           player_1.attack(hand, player_2, hand_o)
