@@ -9,6 +9,7 @@ player_2 = Player(1,1)
 game = Game(player_1,player_2)
 
 while True:
+    game.print
     game.turn
     if game.turn == 1:
         game.action(player_1,player_2)
