@@ -26,7 +26,7 @@ class Game:
       self.turn = (self.turn + 1)%2 + 1
       print(f'Player {self.turn} turn')
 
-  def action(player_1,player_2):   
+  def action(self,player_1,player_2):   
       if player_1.hand_1 != 0 and player_1.hand_2 != 0:
         print('You can only attack')
         while True:
