@@ -22,39 +22,40 @@ class Game:
       print("hands of player 1: "+str(self.player_1.hand_1)+" "+str(self.player_1.hand_2))
       print("hands of player 2: "+str(self.player_2.hand_1)+" "+str(self.player_2.hand_2))
 
-  def turn(self,other):
+  def turn(self):
       self.turn = (self.turn + 1)%2 + 1
       print(f'Player {self.turn} turn')
 
   def action(self,player_1,player_2):   
+      print("It's {player_1} turn")
       if player_1.hand_1 != 0 and player_1.hand_2 != 0:
         print('You can only attack')
         while True:
           print('Choose one of your hands (1 or 2)')
-          hand = input()
+          hand = int(input())
           if hand == 1 or hand == 2:
             break
         while True:
           print("Choose one of your opponent's hand (1 or 2)")         
-          hand_o = input
+          hand_o = int(input)
           if hand_o == 1 or hand_o == 2:
             break
         player_1.attack(hand, player_2, hand_o)
       elif (player_1.hand_1 == 0 or player_1.hand_2 == 0) and (player_1.hand_1 + player_2.hand_2)%2 == 0:
         while True:
           print('Choose to 1:attack or 2:spit')
-          action = input()
+          action = int(input())
           if action == 1 or action == 2:
             break
         if action == 1:
           while True:
             print('Choose one of your hands (1 or 2)')
-            hand = input()
+            hand = int(input())
             if hand == 1 or hand == 2:
               break
           while True:
             print("Choose one of your opponent's hand (1 or 2)")         
-            hand_o = input
+            hand_o = int(input)
             if hand_o == 1 or hand_o == 2:
               break
           player_1.attack(hand, player_2, hand_o)
