@@ -21,3 +21,15 @@ class Player:
       self.hand_2 = (self.hand_1+self.hand_2)/2
     else:
       print("No se puede hacer split")
+
+  def input_hand(self):
+    while True:
+      try:
+        hand = int(input())
+        if hand == 1 and self.hand_1 != 0:
+          return hand
+        if hand == 2 and self.hand_2 != 0:
+          return hand
+      except ValueError:
+          continue
+

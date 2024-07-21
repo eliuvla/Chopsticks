@@ -28,20 +28,17 @@ class Game:
   def action(self,player_1,player_2):   
       if player_1.hand_1 != 0 and player_1.hand_2 != 0:
         print('You can only attack')
-        while True:
-          print('Choose one of your hands (1 or 2)')
-          hand = int(input())
-          if hand == 1 or hand == 2:
-            break
-        while True:
+        print('Choose one of your hands (1 or 2)')
+        hand = player_1.input_hand()
+        if player_2.hand_1 == 0 or player_2.hand_2 == 0:
+          if player_2.hand_1 == 0:
+            hand_o = player_2.hand_2
+          else:
+            hand_o = player_2.hand_1
+        else:
           print("Choose one of your opponent's hand (1 or 2)")         
-          hand_o = int(input())
-          if hand_o == 1 or hand_o == 2:
-            if hand == 1 and player_2.hand_1 != 0:
-              break
-            if hand == 2 and player_2.hand_2 != 0:
-              break
-        player_1.attack(hand, player_2, hand_o)
+          hand_o = player_2.input_hand()
+          player_1.attack(hand, player_2, hand_o)
       elif (player_1.hand_1 == 0 or player_1.hand_2 == 0) and (player_1.hand_1 + player_2.hand_2)%2 == 0:
         while True:
           print('Choose to 1:attack or 2:spit')
@@ -53,15 +50,15 @@ class Game:
             hand = 1
           else:
             hand = 2
-          while True:
+          if player_2.hand_1 == 0 or player_2.hand_2 == 0:
+            if player_2.hand_1 == 0:
+              hand_o = player_2.hand_2
+            else:
+              hand_o = player_2.hand_1
+          else:
             print("Choose one of your opponent's hand (1 or 2)")         
-            hand_o = int(input())
-            if hand_o == 1 or hand_o == 2:
-              if hand == 1 and player_2.hand_1 != 0:
-                break
-              if hand == 2 and player_2.hand_2 != 0:
-                break
-          player_1.attack(hand, player_2, hand_o)
+            hand_o = player_2.input_hand()
+            player_1.attack(hand, player_2, hand_o)
         else:
           player_1.split()
       else: 
@@ -70,15 +67,15 @@ class Game:
           hand = 2
         else:
           hand = 1
-        while True:
+        if player_2.hand_1 == 0 or player_2.hand_2 == 0:
+          if player_2.hand_1 == 0:
+            hand_o = player_2.hand_2
+          else:
+            hand_o = player_2.hand_1
+        else:
           print("Choose one of your opponent's hand (1 or 2)")         
-          hand_o = int(input())
-          if hand_o == 1 or hand_o == 2:
-            if hand == 1 and player_2.hand_1 != 0:
-              break
-            if hand == 2 and player_2.hand_2 != 0:
-              break
-        player_1.attack(hand, player_2, hand_o)
+          hand_o = player_2.input_hand()
+          player_1.attack(hand, player_2, hand_o)
         
 
 
