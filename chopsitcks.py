@@ -10,7 +10,6 @@ game = Game(player_1,player_2)
 
 while True:
     game.print()
-    game.turn_switch()
     if game.turn == 1:
         game.action(player_1,player_2)
         game.check_win()
@@ -23,4 +22,5 @@ while True:
         if game.winner != None:
             game.print(1)
             break
+    game.turn_switch()
 
