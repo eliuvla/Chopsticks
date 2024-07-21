@@ -38,7 +38,7 @@ class Game:
           print("Choose one of your opponent's hand (1 or 2)")         
           hand_o = player_2.input_hand()
         player_1.attack(hand, player_2, hand_o)
-      elif (player_1.hand_1 == 0 or player_1.hand_2 == 0) and (player_1.hand_1 + player_2.hand_2)%2 == 0:
+      elif (player_1.hand_1 == 0 or player_1.hand_2 == 0) and (player_1.hand_1 + player_1.hand_2)%2 == 0:
         while True:
           print('Choose to 1:attack or 2:spit')
           action = int(input())
