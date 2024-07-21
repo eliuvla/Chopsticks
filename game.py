@@ -31,9 +31,9 @@ class Game:
         print('Choose one of your hands (1 or 2)')
         hand = player_1.input_hand()
         if player_2.hand_2 == 0:
-          hand_o = player_2.hand_1
+          hand_o = 1
         elif player_2.hand_1 == 0:
-            hand_o = player_2.hand_2       
+            hand_o = 2      
         else:
           print("Choose one of your opponent's hand (1 or 2)")         
           hand_o = player_2.input_hand()
@@ -51,9 +51,9 @@ class Game:
             hand = 2
           if player_2.hand_1 == 0 or player_2.hand_2 == 0:
             if player_2.hand_1 == 0:
-              hand_o = player_2.hand_2
+              hand_o = 2
             else:
-              hand_o = player_2.hand_1
+              hand_o = 1
           else:
             print("Choose one of your opponent's hand (1 or 2)")         
             hand_o = player_2.input_hand()
@@ -68,9 +68,9 @@ class Game:
           hand = 1
         if player_2.hand_1 == 0 or player_2.hand_2 == 0:
           if player_2.hand_1 == 0:
-            hand_o = player_2.hand_2
+            hand_o = 2
           else:
-            hand_o = player_2.hand_1
+            hand_o = 1
         else:
           print("Choose one of your opponent's hand (1 or 2)")         
           hand_o = player_2.input_hand()
